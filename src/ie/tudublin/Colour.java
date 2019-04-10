@@ -1,13 +1,19 @@
 package ie.tudublin;
 
+import processing.data.Table;
+import processing.data.TableRow;
+
 public class Colour {
     public int r, g, b;
     private String colour;
+    private int value;
 
-    public Colour(int r, int g, int b) {
-        setR(r);
-        setG(g);
-        setB(b);
+    public Colour(TableRow row) {
+        setColour(row.getString(colour));
+        setR(row.getInt(r));
+        setG(row.getInt(g));
+        setB(row.getInt(b));
+        setValue(row.getInt(value));
     }
 
     public String toString() {
@@ -71,6 +77,20 @@ public class Colour {
      */
     public void setColour(String colour) {
         this.colour = colour;
+    }
+
+    /**
+     * @return the value
+     */
+    public int getValue() {
+        return value;
+    }
+
+    /**
+     * @param value the value to set
+     */
+    public void setValue(int value) {
+        this.value = value;
     }
     
 }
