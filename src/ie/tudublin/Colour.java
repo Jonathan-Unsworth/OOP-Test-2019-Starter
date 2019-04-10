@@ -9,11 +9,11 @@ public class Colour {
     private int value;
 
     public Colour(TableRow row) {
-        setColour(row.getString(colour));
-        setR(row.getInt(r));
-        setG(row.getInt(g));
-        setB(row.getInt(b));
-        setValue(row.getInt(value));
+        setColour(row.getString("colour"));
+        setR(row.getInt("r"));
+        setG(row.getInt("g"));
+        setB(row.getInt("b"));
+        setValue(row.getInt("value"));
     }
 
     public String toString() {

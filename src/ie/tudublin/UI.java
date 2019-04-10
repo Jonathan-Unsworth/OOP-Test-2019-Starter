@@ -11,12 +11,14 @@ public class UI extends PApplet
 	public static ArrayList<Colour> colours = new ArrayList<Colour>();
 	public static ArrayList<Resistor> resistors = new ArrayList<Resistor>();
 
+	int hundreds, tens, ones;
+
 
 	public void separate(int value)
 	{
-		int hundreds = (value / 100);
-		int tens = (value - (hundreds * 100)) / 10;
-		int ones = value - ((hundreds * 100)  + (tens * 10));
+		hundreds = (value / 100);
+		tens = (value - (hundreds * 100)) / 10;
+		ones = value - ((hundreds * 100)  + (tens * 10));
 		print(hundreds + ",");
 		print(tens + ",");
 		println(ones);
@@ -68,6 +70,15 @@ public class UI extends PApplet
 	}
 	
 	public void draw()
-	{			
+	{		
+		for(Resistor r : resistors) {
+			rect(width - 400, height - 100, 100, 100);
+			fill(findColour(hundreds), findColour(tens), findColour(ones));
+			rect(width - 390, height - 100, 15, 15);
+			fill(findColour(hundreds), findColour(tens), findColour(ones));
+			rect(width - 350, height - 100, 15, 15);
+			fill(findColour(hundreds), findColour(tens), findColour(ones));
+			rect(width - 320, height - 100, 15, 15);
+		}	
 	}
 }
