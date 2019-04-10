@@ -11,7 +11,7 @@ public class UI extends PApplet
 	public static ArrayList<Colour> colours = new ArrayList<Colour>();
 	public static ArrayList<Resistor> resistors = new ArrayList<Resistor>();
 
-	int hundreds, tens, ones;
+	private int hundreds, tens, ones;
 
 
 	public void separate(int value)
@@ -79,6 +79,8 @@ public class UI extends PApplet
 			rect(width - 350, height - 100, 15, 15);
 			fill(findColour(hundreds), findColour(tens), findColour(ones));
 			rect(width - 320, height - 100, 15, 15);
+			line();
+			line()
 		}	
 	}
 }
